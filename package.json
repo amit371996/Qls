@@ -26,6 +26,7 @@
     "fullpage.js": "^4.0.20",
     "gatsby": "^5.9.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-source-wordpress": "^7.9.0",
     "jquery": "^3.6.1",
     "react": "^18.1.0",

@@ -31,6 +31,12 @@ module.exports = {
             '**/categories'
           ]
       }
+  },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      icon: 'https://www.qlspace.com.au/wp-content/uploads/2023/03/ficon-04.png',
+    },
   }
   ],
 }
