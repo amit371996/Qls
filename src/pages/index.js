@@ -491,7 +491,7 @@ const Home = () => {
 
                                             {
                                               getSection(data, 0, 5).map(url => (
-                                                <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                                <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                               ))
                                             }
                                           </ul>
@@ -501,7 +501,7 @@ const Home = () => {
 
                                             {
                                               getSection(data, 5, 10).map(url => (
-                                                <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                                <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                               ))
                                             }
                                           </ul>
@@ -511,7 +511,7 @@ const Home = () => {
 
                                             {
                                               getSection(data, 10, 15).map(url => (
-                                                <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                                <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                               ))
                                             }
                                           </ul>
@@ -893,7 +893,7 @@ const Home = () => {
                                 <ul>
                                   {
                                     getSection(data, 0, 5).map(url => (
-                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                      <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                     ))
                                   }
                                 </ul>
@@ -902,7 +902,7 @@ const Home = () => {
                                 <ul>
                                   {
                                     getSection(data, 5, 10).map(url => (
-                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                      <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                     ))
                                   }
                                 </ul>
@@ -911,7 +911,7 @@ const Home = () => {
                                 <ul>
                                   {
                                     getSection(data, 10, 15).map(url => (
-                                      <li><Link to={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
+                                      <li><Link to={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </Link> </li>
                                     ))
                                   }
                                 </ul>

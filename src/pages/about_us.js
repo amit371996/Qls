@@ -312,7 +312,7 @@ const About = () => {
 																						<ul>
 																							{
 																								getSection(data, 0, 5).map(url => (
-																									<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																									<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																								))
 																							}
 																						</ul>
@@ -321,7 +321,7 @@ const About = () => {
 																						<ul>
 																							{
 																								getSection(data, 5, 10).map(url => (
-																									<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																									<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																								))
 																							}
 																						</ul>
@@ -331,7 +331,7 @@ const About = () => {
 
 																							{
 																								getSection(data, 10, 15).map(url => (
-																									<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																									<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																								))
 																							}
 																						</ul>
@@ -536,7 +536,7 @@ const About = () => {
 
 																	{
 																		getSection(data, 0, 5).map(url => (
-																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																			<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
@@ -546,7 +546,7 @@ const About = () => {
 
 																	{
 																		getSection(data, 5, 10).map(url => (
-																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																			<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
@@ -556,7 +556,7 @@ const About = () => {
 
 																	{
 																		getSection(data, 10, 15).map(url => (
-																			<li><a href={url.siteUrl}><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
+																			<li><a href={url.siteUrl} target="_blank"><img src={url.partnerImage.sourceUrl} alt='' /> </a> </li>
 																		))
 																	}
 																</ul>
