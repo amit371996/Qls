@@ -98,12 +98,12 @@ export default function Footer() {
 													</div>
 													<div className="list_s">
 														<ul>
-															<li><a href="https://www.facebook.com/qlspaces">
+															<li><a href="https://www.facebook.com/qlspaces" target="_blank">
 																<img src={frame1} alt="" /></a></li>
-															<li><a href='https://www.linkedin.com/company/qlspace/' ><img src={frame2} alt="" /></a></li>
-															<li><a href="https://twitter.com/qlspace_"><img src={frame3} alt="" /></a></li>
-															<li><a href="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos"><img src={frame4} alt="" /></a></li>
-															<li><a href=""><img src={frame5} alt="" /></a></li>
+															<li><a href='https://www.linkedin.com/company/qlspace/'target="_blank"  ><img src={frame2} alt="" /></a></li>
+															<li><a href="https://twitter.com/qlspace_" target="_blank"><img src={frame3} alt="" /></a></li>
+															<li><a href="https://www.youtube.com/channel/UC6xhk9nI6VxQ0UJpLjDmKvA/videos" target="_blank"><img src={frame4} alt="" /></a></li>
+															<li><a href="#" ><img src={frame5} alt="" /></a></li>
 														</ul>
 													</div>
 												</div>
@@ -139,7 +139,7 @@ export default function Footer() {
 																						activeClassName="active"
 																					  >
 																						{prop.label}
-																						{console.log(prop.label)}
+																						
 																					  </Link>
 																					</li>
 																				  ) : (
@@ -240,7 +240,7 @@ export default function Footer() {
 														</div>
 														<div className="righti_text">
 															<div className="rig_th">
-																<span>Tel</span>
+																<span>Phone</span>
 																<p>
 																	<a href="tel:+61 410 881 616">+61 410 881 616</a></p>
 															</div>
