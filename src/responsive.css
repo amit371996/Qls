@@ -1383,7 +1383,8 @@ header#header1 nav.navbar.navbar-expand-lg.header_innerd .container div#navbarSu
     margin-top: 0;
 }
 .our_main_heading{
-     margin-top: 50px;   
+     margin-top: 50px;
+     padding-bottom: 50px;   
 }
 .list_s ul{
  padding-top: 0;   
