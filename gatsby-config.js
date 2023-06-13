@@ -35,7 +35,7 @@ module.exports = {
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      icon: 'src\image\ficon-04.png',
+      icon: 'src/image/ficon-04.png',
     }
   },
   ],
