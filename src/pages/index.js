@@ -597,7 +597,7 @@ const Home = () => {
                                                       </Link></h3>
                                                     <p>  {allddt.excerpt.split('').slice(0,50).join('')}... </p>
                                                     <div className="our_tascrt">
-                                                      <Link to="/whats_new">View All News</Link>
+                                                      <Link to="/news">View All News</Link>
 
                                                     </div>
                                                   </div>
