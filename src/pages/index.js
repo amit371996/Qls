@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,useLayoutEffect } from 'react';
 import ReactFullpage, { FullpageApi } from "@fullpage/react-fullpage";
 import "../stylee.css"
 import "../responsive.css"

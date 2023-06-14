@@ -64,7 +64,7 @@ const About = () => {
 
 				});
 		}
-	},[])
+	},[]);
 	useEffect(() => {
 		const header = document.querySelector('header');
 		if (header) {
