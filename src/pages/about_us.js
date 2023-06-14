@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import "../stylee.css";
 import "../responsive.css"
 import { useState, useEffect, useRef } from "react";
@@ -52,6 +52,19 @@ const About = () => {
 				});
 		}
 	};
+	useLayoutEffect(() => {
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined ) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
+
+				});
+		}
+	},[])
 	useEffect(() => {
 		const header = document.querySelector('header');
 		if (header) {
@@ -417,7 +430,7 @@ const About = () => {
 																		autoPlay
 																		muted
 																		onEnded={handleVideoEnded}
-
+																		playsInline
 																		className="video"
 																	>
 
@@ -448,7 +461,7 @@ const About = () => {
 																		autoPlay
 																		muted
 																		onEnded={handleVideoEnded}
-
+																		playsInline
 																		className="video"
 																	>
 																	</video>
