@@ -49,7 +49,19 @@ const Home = () => {
 				});
 		}
 	};
+	useLayoutEffect(() => {
+		const video = videoRef.current;
+		const playPromise = video.play();
+		if (playPromise !== undefined ) {
+			playPromise
+				.then(() => {
+					video.play();
+				})
+				.catch(error => {
 
+				});
+		}
+	},[]);
   const handleScroll = () => {
     const scrollDiv = document.querySelector('.list_manage');
     const scrollTop = scrollDiv.scrollTop;
@@ -360,7 +372,7 @@ const Home = () => {
                                               autoPlay
                                               muted
                                               onEnded={handleVideoEnded}
-                                              
+                                              playsInline
                                               className="video"
                                             >
 
@@ -744,7 +756,7 @@ const Home = () => {
                                     autoPlay
                                     muted
                                     onEnded={handleVideoEnded}
-
+                                    playsInline
                                     className="video"
                                   >
                                   </video>
@@ -773,7 +785,7 @@ const Home = () => {
                                     autoPlay
                                     muted
                                     onEnded={handleVideoEnded}
-
+                                    playsInline
                                     className="video">
 
                                   </video>
