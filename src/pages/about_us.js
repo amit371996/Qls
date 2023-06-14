@@ -208,6 +208,8 @@ const About = () => {
 																					<div className="image_gnbdd">
 
 																						<div className="image_hfgfss">
+																							<div 
+																							dangerouslySetInnerHTML={{__html:`
 																							<video
 																								id="myVideo"
 																								preload=""
@@ -216,12 +218,15 @@ const About = () => {
 																								autoPlay
 																								muted
 																								onEnded={handleVideoEnded}
-
+																								playsInline
 																								className="video"
 
 																							>
 
 																							</video>
+																							`}}
+																							/>
+																							
 																						</div>
 																					</div>
 																				</div>
