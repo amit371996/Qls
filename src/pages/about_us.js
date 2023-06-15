@@ -9,7 +9,7 @@ import Footer from "../components/footer/footer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
+import earthvideo from '../image/earth_video.mp4';
 const About = () => {
 	library.add(faAngleUp);
 	const [isFullpage, setIsFullpage] = useState(true);
@@ -224,7 +224,7 @@ const About = () => {
 																							<video
 																								id="myVideo"
 																								preload=""
-																								src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																								src={earthvideo}
 																								ref={videoRef}
 																								autoPlay
 																								muted
@@ -425,7 +425,7 @@ const About = () => {
 
 																		id="myVideo"
 																		preload=""
-																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		src={earthvideo}
 																		ref={videoRef}
 																		autoPlay
 																		muted
@@ -456,7 +456,7 @@ const About = () => {
 																	<video
 																		id="myVideo"
 																		preload=""
-																		src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+																		src={earthvideo}
 																		ref={videoRef}
 																		autoPlay
 																		muted
