@@ -9,7 +9,7 @@ import Footer from '../components/footer/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
+import earthvideo from '../image/earth_vd_er.mp4';
 const getSection = (data, start, end) => {
   const imageUrls = data && data.wpPage && data.wpPage.homePartnerSection && data.wpPage.homePartnerSection.partner;
 
@@ -367,7 +367,7 @@ const Home = () => {
 
                                               id="myVideo"
                                               preload=""
-                                              src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+                                              src={earthvideo}
                                               ref={videoRef}
                                               autoPlay
                                               muted
@@ -751,7 +751,7 @@ const Home = () => {
                                   <video
                                     id="myVideo"
                                     preload=""
-                                    src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+                                    src={earthvideo}
                                     ref={videoRef}
                                     autoPlay
                                     muted
@@ -780,7 +780,7 @@ const Home = () => {
                                   <video
                                     id="myVideo"
                                     preload=""
-                                    src="https://www.qlspace.com.au/wp-content/themes/qls/assets/image/earth-65103.mp4"
+                                    src={earthvideo}
                                     ref={videoRef}
                                     autoPlay
                                     muted

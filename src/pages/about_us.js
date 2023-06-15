@@ -9,7 +9,7 @@ import Footer from "../components/footer/footer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import earthvideo from '../image/earth_video.mp4';
+import earthvideo from '../image/earth_vd_er.mp4';
 const About = () => {
 	library.add(faAngleUp);
 	const [isFullpage, setIsFullpage] = useState(true);
