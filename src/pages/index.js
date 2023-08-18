@@ -478,7 +478,7 @@ const Home = () => {
                                               <p>Use high-resolution satellite data, AI and machine learning to derive intelligent information for defence surveillance and security monitoring</p>
                                               <ul>
                                                 <li>Identify military resources and troop movement to aid with relief and security efforts</li>
-                                                <li>Detect chemical seepages across land classes</li>
+                                                <li>Detect chemical seepages across land</li>
                                               </ul>
                                             </div>
                                           </div>
