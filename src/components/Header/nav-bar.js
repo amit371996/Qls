@@ -36,9 +36,9 @@ export default function NavBar(props) {
     const checkBox = document.getElementById('disabledSelect');
     const cookies = new Cookies();
     if (checkBox.checked) {
-      cookies.set('Popup', '1', { domain: '.qltech.com.au', path: '/', maxAge: 1000000 });
+      cookies.set('Popup', '1', { domain: '.qlspace.com.au', path: '/', maxAge: 1000000 });
       setIsOpen(false);
-      history.push('/home'); // Replace '/home' with the actual URL of your homepage
+      history.push('/'); // Replace '/home' with the actual URL of your homepage
     } else {
       console.log('User did not agree.');
     }
