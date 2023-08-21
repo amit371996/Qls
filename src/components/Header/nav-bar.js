@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link, StaticQuery, navigate } from "gatsby"
 
+import { Modal, Form, Button } from 'react-bootstrap';
+import Cookies from 'universal-cookie';
+import { init, track } from 'analytics-library';
+import { useHistory } from 'react-router-dom'; // Make sure to import the useHistory hook
+
 import "../../stylee.css"
 import logo from '../../image/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,6 +15,57 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ScrollToTopButton from "../scroll_top/scroll_top";
 
 export default function NavBar(props) {
+  const history = useHistory();
+
+  const [isBoxVisible, setIsBoxVisible] = useState('opa');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const checkModel = () => {
+    const cookies = new Cookies();
+    const popupValue = cookies.get('Popup');
+    if (popupValue === undefined || popupValue === '0') {
+      setIsOpen(true);
+    }
+  };
+
+  const handleChange = () => {
+    setIsBoxVisible(isBoxVisible === 'opa' ? '' : 'opa');
+  };
+
+  const handleClick = () => {
+    const checkBox = document.getElementById('disabledSelect');
+    const cookies = new Cookies();
+    if (checkBox.checked) {
+      cookies.set('Popup', '1', { domain: '.qltech.com.au', path: '/', maxAge: 1000000 });
+      setIsOpen(false);
+      history.push('/home'); // Replace '/home' with the actual URL of your homepage
+    } else {
+      console.log('User did not agree.');
+    }
+  };
+
+  useEffect(() => {
+    const cookies = new Cookies();
+    if (!cookies.get('aid')) {
+      const code = createUUID();
+      cookies.set('aid', code, { domain: '.qltech.com.au', path: '/' });
+    }
+
+    const urlAction = window.location.href;
+    init('30c4c799e1eda5b6cfe2d675f3b9e12e');
+    console.log(document.title);
+    const anid = cookies.get('aid');
+    const eventProperties = {
+      location: urlAction,
+      anonymoudId: anid,
+      pageName: document.title,
+    };
+    console.log(eventProperties);
+    track('Page Viewed', eventProperties);
+    checkModel();
+  }, []);
+
+  
   useEffect(() => {
     const handleScroll = () => {
       const header = document.getElementById("header");
@@ -135,6 +191,40 @@ export default function NavBar(props) {
 
             </header>
           </div>
+          <Modal
+        animation={false}
+        fullscreen={true}
+        keyboard={false}
+        backdrop="static"
+        show={isOpen}
+        onHide={() => {}} // Prevent closing
+        size="lg"
+        className="video-modal model-custom"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body className="p-0">
+          <p className="sub_sub_title">
+            QL Tech is headquartered on Whadjuk Nyoongar Boodjar. We acknowledge the Whadjuk people as the traditional
+            owners and custodians of these lands, waterways and skies and pay our respects to their Elders, past and
+            present.
+          </p>
+          <p className="sub_sub_title">
+            We also offer our heartfelt gratitude to Aboriginal and Torres Strait Islander people and communities across
+            all lands in which QL Tech operates. QL Tech recognizes their generosity and wisdom in how they continue to
+            care for Country and share their knowledge, which in turn helps us to understand and navigate Country safely
+            and respectfully.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check onChange={handleChange} id="disabledSelect" type="checkbox" label="I acknowledge" />
+          </Form.Group>
+          <Button id="btnn" className={isBoxVisible} onClick={handleClick} variant="primary">
+            Continue
+          </Button>
+        </Modal.Footer>
+      </Modal>                                   
           <div
             className="overlay"
             style={{ display: showModal ? "block" : "none" }}>
