@@ -77,7 +77,7 @@ export default function NavBar(props) {
                     <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
                     
                   </button>
-                  <div className={`collapse navbar-collapse ${isMenuOpen ? "" : "show"}`} id="navbarSupportedContent">
+                  <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                       {data &&
                         data.wpMenu &&
