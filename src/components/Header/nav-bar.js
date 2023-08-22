@@ -23,6 +23,7 @@ export default function NavBar(props) {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,18 +31,20 @@ export default function NavBar(props) {
   }, []);
   library.add(faBars)
   const [showModal, setShowModal] = useState(false);
-
-  const handleClick = (index) => {
-    if (activeMenuItem === index) {
-      // Clicked on the same active menu item, close the toggle
-      setActiveMenuItem(null);
+  const handleClick = () => {
+    setShowModal(true);
+    
+  }
+  const handleToggle =() =>{
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
     } else {
-      // Clicked on a different menu item, toggle the toggle
-      setShowModal(true);
-      setActiveMenuItem(index);
+      setIsMenuOpen(true);
     }
   }
-const [activeMenuItem, setActiveMenuItem] = useState(null);
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <StaticQuery
       query={graphql`
@@ -70,10 +73,11 @@ const [activeMenuItem, setActiveMenuItem] = useState(null);
                       <img src={logo} alt="" />
                     </Link>
                   </div>
-                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={handleToggle}>
                     <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
+                    
                   </button>
-                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div className={`collapse navbar-collapse ${isMenuOpen ? "" : "show"}`} id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                       {data &&
                         data.wpMenu &&
@@ -83,8 +87,7 @@ const [activeMenuItem, setActiveMenuItem] = useState(null);
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                              onClick={() => handleClick(i)}
-                              key={i} >
+                                onClick={() => setActiveMenuItem(i)}>
                                 <Link
                                   to={"/"}
                                   className="nav-link"
@@ -95,8 +98,7 @@ const [activeMenuItem, setActiveMenuItem] = useState(null);
                               </li>
                             ) : prop.label === "What's New" ? (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                              onClick={() => handleClick(i)}
-                              key={i}>
+                                onClick={() => setActiveMenuItem(i)}>
                                 <Link
                                   to={"/news"}
                                   className="nav-link"
@@ -107,8 +109,7 @@ const [activeMenuItem, setActiveMenuItem] = useState(null);
                               </li>
                             ) : (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                              onClick={() => handleClick(i)}
-                              key={i}>
+                                onClick={() => setActiveMenuItem(i)}>
                                 <Link
                                   to={
                                     "/" +
