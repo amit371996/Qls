@@ -38,13 +38,7 @@ export default function NavBar(props) {
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
     const navbar = document.getElementById('navbarSupportedContent');
-    console.log(navbar.classList);
-    if(navbar.classList.contains('show')){
-      navbar.classList.remove('show');
-    }
-    else{
-      navbar.classList.add('show');
-    }
+    navbar.classList.contains('show') ? navbar.classList.remove('show') : navbar.classList.add('show');
   };
 
   const [activeMenuItem, setActiveMenuItem] = useState(null);
