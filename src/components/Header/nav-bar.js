@@ -34,7 +34,6 @@ export default function NavBar(props) {
   const handleClick = (index) => {
     if (activeMenuItem === index) {
       // Clicked on the same active menu item, close the toggle
-      setShowModal(false);
       setActiveMenuItem(null);
     } else {
       // Clicked on a different menu item, toggle the toggle
