@@ -73,7 +73,7 @@ export default function NavBar(props) {
                       <img src={logo} alt="" />
                     </Link>
                   </div>
-                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={handleToggle}>
+                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
                     
                   </button>
@@ -87,7 +87,10 @@ export default function NavBar(props) {
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                onClick={() => setActiveMenuItem(i)}>
+                              onClick={() => {
+                                setActiveMenuItem(i);
+                                handleToggle(); // Toggle the menu on menu item click
+                              }} >
                                 <Link
                                   to={"/"}
                                   className="nav-link"
