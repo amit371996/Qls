@@ -33,15 +33,10 @@ export default function NavBar(props) {
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => {
     setShowModal(true);
-    
+
   }
-  const handleToggle =() =>{
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    } else {
-      setIsMenuOpen(true);
-    }
-  }
+  const handleToggle = () => setIsMenuOpen(!isMenuOpen);
+
   const [activeMenuItem, setActiveMenuItem] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -75,7 +70,7 @@ export default function NavBar(props) {
                   </div>
                   <button className={`navbar-toggler ${isMenuOpen ? "" : "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
-                    
+
                   </button>
                   <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -83,19 +78,19 @@ export default function NavBar(props) {
                         data.wpMenu &&
                         data.wpMenu.menuItems &&
                         data.wpMenu.menuItems.nodes.map((prop, i) => {
-                          
+
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                              onClick={() => {
-                                setActiveMenuItem(i);
-                                // Toggle the menu on menu item click
-                              }} >
+                                onClick={() => {
+                                  setActiveMenuItem(i);
+                                  // Toggle the menu on menu item click
+                                }} >
                                 <Link
                                   to={"/"}
                                   className="nav-link"
                                   activeClassName="active"
-                                  onClick={ handleToggle}
+                                  onClick={handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
@@ -107,7 +102,7 @@ export default function NavBar(props) {
                                   to={"/news"}
                                   className="nav-link"
                                   activeClassName="active"
-                                  onClick={ handleToggle}
+                                  onClick={handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
@@ -125,7 +120,7 @@ export default function NavBar(props) {
                                   }
                                   className="nav-link"
                                   activeClassName="active"
-                                  onClick={ handleToggle}
+                                  onClick={handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
