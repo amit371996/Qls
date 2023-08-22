@@ -89,12 +89,13 @@ export default function NavBar(props) {
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
                               onClick={() => {
                                 setActiveMenuItem(i);
-                                handleToggle(); // Toggle the menu on menu item click
+                                // Toggle the menu on menu item click
                               }} >
                                 <Link
                                   to={"/"}
                                   className="nav-link"
                                   activeClassName="active"
+                                  onClick={ handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
@@ -106,6 +107,7 @@ export default function NavBar(props) {
                                   to={"/news"}
                                   className="nav-link"
                                   activeClassName="active"
+                                  onClick={ handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
@@ -123,6 +125,7 @@ export default function NavBar(props) {
                                   }
                                   className="nav-link"
                                   activeClassName="active"
+                                  onClick={ handleToggle}
                                 >
                                   {prop.label}
                                 </Link>
