@@ -39,7 +39,7 @@ export default function NavBar(props) {
     setIsMenuOpen(!isMenuOpen);
     const navbar = document.getElementById('navbarSupportedContent');
     console.log(navbar.classList);
-    if(navbar.classList.includes('show')){
+    if(navbar.classList.contains('show')){
       navbar.classList.remove('show');
     }
     else{
