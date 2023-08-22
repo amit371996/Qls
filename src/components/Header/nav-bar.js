@@ -23,7 +23,6 @@ export default function NavBar(props) {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -31,12 +30,19 @@ export default function NavBar(props) {
   }, []);
   library.add(faBars)
   const [showModal, setShowModal] = useState(false);
-  const handleClick = () => {
-    setShowModal(true);
+
+  const handleClick = (index) => {
+    if (activeMenuItem === index) {
+      // Clicked on the same active menu item, close the toggle
+      setShowModal(false);
+      setActiveMenuItem(null);
+    } else {
+      // Clicked on a different menu item, toggle the toggle
+      setShowModal(true);
+      setActiveMenuItem(index);
+    }
   }
-  const [activeMenuItem, setActiveMenuItem] = useState(null);
-
-
+const [activeMenuItem, setActiveMenuItem] = useState(null);
   return (
     <StaticQuery
       query={graphql`
@@ -78,7 +84,8 @@ export default function NavBar(props) {
                           const itemToRender = prop.label === "Home" ?
                             (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                onClick={() => setActiveMenuItem(i)}>
+                              onClick={() => handleClick(i)}
+                              key={i} >
                                 <Link
                                   to={"/"}
                                   className="nav-link"
@@ -89,7 +96,8 @@ export default function NavBar(props) {
                               </li>
                             ) : prop.label === "What's New" ? (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                onClick={() => setActiveMenuItem(i)}>
+                              onClick={() => handleClick(i)}
+                              key={i}>
                                 <Link
                                   to={"/news"}
                                   className="nav-link"
@@ -100,7 +108,8 @@ export default function NavBar(props) {
                               </li>
                             ) : (
                               <li className={`nav-item ${i === activeMenuItem ? "active" : ""}`}
-                                onClick={() => setActiveMenuItem(i)}>
+                              onClick={() => handleClick(i)}
+                              key={i}>
                                 <Link
                                   to={
                                     "/" +
