@@ -35,7 +35,17 @@ export default function NavBar(props) {
     setShowModal(true);
 
   }
-  const handleToggle = () => setIsMenuOpen(!isMenuOpen);
+  const handleToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    const navbar = document.getElementById('navbarSupportedContent');
+    console.log(navbar.classList);
+    if(navbar.classList.includes('show')){
+      navbar.classList.remove('show');
+    }
+    else{
+      navbar.classList.add('show');
+    }
+  };
 
   const [activeMenuItem, setActiveMenuItem] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +82,7 @@ export default function NavBar(props) {
                     <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
 
                   </button>
-                  <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarSupportedContent">
+                  <div className={`collapse navbar-collapse`} id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                       {data &&
                         data.wpMenu &&
