@@ -14,12 +14,7 @@ export default function NavBar(props) {
     const handleScroll = () => {
       const header = document.getElementById("header");
       const sticky = header.offsetTop;
-
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
+      window.pageYOffset > sticky ? header.classList.add("sticky") : header.classList.remove("sticky");
     };
 
     window.addEventListener("scroll", handleScroll);
