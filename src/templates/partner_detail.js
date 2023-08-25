@@ -23,7 +23,7 @@ export default ({ data }) => {
                 <div className="col-md-12">
                   <div className="our_main_heading text-center">
                     <div className="bread_cumg">
-                      <h1 className="text-center"><strong>Event </strong> details</h1>
+                      <h1 className="text-center"><strong>Partner </strong> details</h1>
                       <p>{news.title}</p>
                     </div>
                   </div>
@@ -59,8 +59,7 @@ export default ({ data }) => {
                           <div dangerouslySetInnerHTML={{ __html: news.content }} />
 
 
-                          <div className="link_for_more"><p><b><a href="https://spacenews.com/musk-predicts-next-starship-launch-in-a-couple-months/#:~:text=Musk%20estimated%20SpaceX%20will%20attempt,nearly%20100%25%20within%2012%20months." target="_blank" rel="noopener">For  More  Information</a></b></p>
-                          </div>
+                          
 
 
                         </div>

@@ -176,7 +176,7 @@ export default function Whatsnew() {
 																<div className="heading_nmb">
 																	<h4>
 																		<Link to={"/news/" + news.slug}>
-																			{news.title.split('').slice(0,50).join('')}...  </Link>
+																			{news.title.split('').slice(0,30).join('')}...  </Link>
 																			
 																	</h4>
 																	<div className="next_page">
