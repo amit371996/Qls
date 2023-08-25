@@ -3364,6 +3364,13 @@ header li.nav-item.current-menu-item a {
 .form-check {
     margin-bottom: 0;
 }
-.container-with-padding{
+.container-with-paddins{
     padding-bottom: 90px !important;
+}
+.date_icon span {
+    margin-right: 2px;
+}
+
+.uhgbv span {
+    margin-right: 5px;
 }
