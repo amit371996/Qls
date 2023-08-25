@@ -202,7 +202,7 @@ export default function Videos() {
                                                                 <div className="heading_nmb">
                                                                     <h4>
                                                                         <Link to={"/video/" + vido.slug}>
-                                                                            {vido.title.split('').slice(0,50).join('')}...</Link>
+                                                                            {vido.title.split('').slice(0, 50).join('')}...</Link>
                                                                     </h4>
                                                                     <div className="next_page">
                                                                         <Link to={"/video/" + vido.slug} className="read-more"> Read more
@@ -217,7 +217,9 @@ export default function Videos() {
                                             )
                                         })}
 
-                                        <ul className="pagination">{renderPageNumbers()}</ul>
+                                        {totalItems > itemsPerPage && (
+                                            <ul className="pagination">{renderPageNumbers()}</ul>
+                                        )}
 
                                     </div>
                                 </div>

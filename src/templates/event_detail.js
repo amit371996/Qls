@@ -8,9 +8,6 @@ import "../responsive.css"
 export default ({ data }) => {
 
   const news = data.allWpEvents.edges[0].node
-
-
-
   return (
 
     <Layout>
