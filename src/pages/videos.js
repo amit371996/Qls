@@ -177,8 +177,8 @@ export default function Videos() {
                                             return (
                                                 <>
                                                     <div className="col-md-6" key={vido.id}>
-
-                                                        <div className="our_lkhb">
+                                                  
+                                                        <div className=  {`our_lkhb ${totalItems > itemsPerPage ? 'our_lkhb-with-margin' : ''}`}>
                                                             <div className="imh_bc">
                                                                 <div className="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
@@ -218,10 +218,9 @@ export default function Videos() {
                                         })}
 
                                         {totalItems > itemsPerPage && (
-                                            <ul className={`pagination ${totalItems > itemsPerPage ? 'pagination-with-padding' : ''}`}>
-                                                {renderPageNumbers()}
-                                            </ul>
+                                            <ul className="pagination">{renderPageNumbers()}</ul>
                                         )}
+
                                     </div>
                                 </div>
                             </div>
