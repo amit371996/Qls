@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
           // Specify the URL of the WordPress source
-          url: `https://development.qlspace.com.au/graphql`,
+          url: `https://www.qlspace.com.au/graphql`,
           protocol: `https`,
           // Indicates if a site is hosted on WordPress.com
           hostingWPCOM: false,
