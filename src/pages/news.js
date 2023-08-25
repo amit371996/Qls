@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import "../stylee.css"
 import "../responsive.css"
 import { Link, StaticQuery, graphql } from 'gatsby';
@@ -99,13 +99,13 @@ export default function Whatsnew() {
 						pageNumbers.push(
 							<li key="next">
 								<a href="#" onClick={() => handlePageClick(currentPage + 1)}>
-								&raquo;
+									&raquo;
 								</a>
 							</li>
 						);
 					}
 					return pageNumbers
-					
+
 				};
 
 				return (
@@ -176,8 +176,8 @@ export default function Whatsnew() {
 																<div className="heading_nmb">
 																	<h4>
 																		<Link to={"/news/" + news.slug}>
-																			{news.title.split('').slice(0,30).join('')}...  </Link>
-																			
+																			{news.title.split('').slice(0, 30).join('')}...  </Link>
+
 																	</h4>
 																	<div className="next_page">
 																		<Link to={"/news/" + news.slug} className="read-more"> Read more
@@ -190,8 +190,9 @@ export default function Whatsnew() {
 													</div>
 												)
 											})}
-											<ul className="pagination"> 
-												{renderPageNumbers()}</ul>
+											{totalItems > itemsPerPage && (
+												<ul className="pagination">{renderPageNumbers()}</ul>
+											)}
 										</div>
 									</div>
 								</div>

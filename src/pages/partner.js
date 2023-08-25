@@ -178,7 +178,7 @@ export default function Partner() {
                                                             <div className="heading_nmb">
                                                                 <h4>
                                                                     <Link to={"/partner/" + partner.slug}>
-                                                                        {partner.title.split('').slice(0,50).join('')}...</Link>
+                                                                        {partner.title.split('').slice(0, 50).join('')}...</Link>
                                                                 </h4>
                                                                 <div className="next_page">
                                                                     <Link to={"/partner/" + partner.slug} className="read-more"> Read more
@@ -194,7 +194,9 @@ export default function Partner() {
                                         })}
 
 
-                                        <ul className="pagination">{renderPageNumbers()}</ul>
+                                        {totalItems > itemsPerPage && (
+                                            <ul className="pagination">{renderPageNumbers()}</ul>
+                                        )}
 
                                     </div>
                                 </div>

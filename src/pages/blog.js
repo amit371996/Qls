@@ -158,7 +158,7 @@ export default function Blog() {
                                     <div className="container">
                                         <div className="row">
                                             {blogs.slice(startIndex, endIndex).map((blog) => {
-                                                
+
 
                                                 return (
                                                     <div className="col-md-6" key={blog.id} >
@@ -181,7 +181,7 @@ export default function Blog() {
                                                                 <div className="heading_nmb">
                                                                     <h4>
                                                                         <Link to={"/blog/" + blog.slug}>
-                                                                        {blog.title.split('').slice(0,50).join('')}...</Link>
+                                                                            {blog.title.split('').slice(0, 50).join('')}...</Link>
                                                                     </h4>
 
 
@@ -198,7 +198,9 @@ export default function Blog() {
 
                                             })}
 
-                                            <ul className="pagination"> {renderPageNumbers()}</ul>
+                                            {totalItems > itemsPerPage && (
+                                                <ul className="pagination">{renderPageNumbers()}</ul>
+                                            )}
 
                                         </div>
                                     </div>
