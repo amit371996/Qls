@@ -178,7 +178,7 @@ export default function Videos() {
                                                 <>
                                                     <div className="col-md-6" key={vido.id}>
                                                   
-                                                        <div className=  {`our_lkhb ${totalItems > itemsPerPage ? 'our_lkhb-with-margin' : ''}`}>
+                                                        <div className=  {`our_lkhb ${totalItems > itemsPerPage ? 'our_lkhb-with-margins' : ''}`}>
                                                             <div className="imh_bc">
                                                                 <div className="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
