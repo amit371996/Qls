@@ -150,7 +150,7 @@ export default function Videos() {
                                 </div>
                             </div>
                         </section>
-                        <section className="section">
+                        <section className="section section-addpad">
                             <div className="whats_new_page">
                                 <div className="container">
                                     <div className="row">
@@ -170,7 +170,7 @@ export default function Videos() {
                                 </div>
                             </div>
                             <div className="list_mnbv">
-                                <div className="container">
+                                <div className={`container ${totalItems < itemsPerPage ? 'container-with-padding' : ''}`}>
                                     <div className="row">
                                         {videos.slice(startIndex, endIndex).map((vido) => {
                                             const videourl = vido.video.videoUrl;
@@ -178,7 +178,7 @@ export default function Videos() {
                                                 <>
                                                     <div className="col-md-6" key={vido.id}>
                                                   
-                                                        <div className=  {`our_lkhb ${totalItems > itemsPerPage ? 'our_lkhb-with-margins' : ''}`}>
+                                                        <div className= "our_lkhb ">
                                                             <div className="imh_bc">
                                                                 <div className="inner_ghv">
                                                                     <img src={vido.news.archiveImage.sourceUrl} />
