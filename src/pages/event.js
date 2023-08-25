@@ -160,7 +160,7 @@ export default function Event() {
                                 </div>
 
                                 <div className="list_mnbv">
-                                    <div className={`container ${totalItems >= itemsPerPage ? 'container-with-paddins' : ''}`}>
+                                    <div className={`container ${totalItems <= itemsPerPage ? 'container-with-padding' : ''}`}>
                                         <div className="row">
                                             {events.slice(startIndex, endIndex).map((event) => {
                                                 return (

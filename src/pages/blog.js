@@ -155,7 +155,7 @@ export default function Blog() {
                                     </div>
                                 </div>
                                 <div className="list_mnbv">
-                                    <div className={`container ${totalItems >= itemsPerPage ? 'container-with-paddins' : ''}`}>
+                                    <div className={`container ${totalItems <= itemsPerPage ? 'container-with-padding' : ''}`}>
                                         <div className="row">
                                             {blogs.slice(startIndex, endIndex).map((blog) => {
 
