@@ -218,9 +218,10 @@ export default function Videos() {
                                         })}
 
                                         {totalItems > itemsPerPage && (
-                                            <ul className="pagination">{renderPageNumbers()}</ul>
+                                            <ul className={`pagination ${totalItems > itemsPerPage ? 'pagination-with-padding' : ''}`}>
+                                                {renderPageNumbers()}
+                                            </ul>
                                         )}
-
                                     </div>
                                 </div>
                             </div>

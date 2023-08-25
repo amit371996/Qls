@@ -3365,3 +3365,6 @@ header li.nav-item.current-menu-item a {
 .form-check {
     margin-bottom: 0;
 }
+.pagination-with-padding{
+    padding-bottom: 50px !important;
+}
