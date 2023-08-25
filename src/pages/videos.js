@@ -170,7 +170,7 @@ export default function Videos() {
                                 </div>
                             </div>
                             <div className="list_mnbv">
-                                <div className={`container ${totalItems >= itemsPerPage ? 'container-with-paddins' : ''}`}>
+                                <div className={`container ${totalItems <= itemsPerPage ? 'container-with-padding' : ''}`}>
                                     <div className="row">
                                         {videos.slice(startIndex, endIndex).map((vido) => {
                                             const videourl = vido.video.videoUrl;
