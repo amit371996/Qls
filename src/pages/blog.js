@@ -155,7 +155,7 @@ export default function Blog() {
                                     </div>
                                 </div>
                                 <div className="list_mnbv">
-                                    <div className="container">
+                                    <div className={`container ${totalItems >= itemsPerPage ? 'container-with-paddins' : ''}`}>
                                         <div className="row">
                                             {blogs.slice(startIndex, endIndex).map((blog) => {
 
@@ -199,7 +199,7 @@ export default function Blog() {
                                             })}
 
                                             {totalItems > itemsPerPage && (
-                                                <ul className="pagination">{renderPageNumbers()}</ul>
+                                                <ul className="pagination" >{renderPageNumbers()}</ul>
                                             )}
 
                                         </div>

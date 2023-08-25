@@ -154,7 +154,7 @@ export default function Partner() {
                                 </div>
                             </div>
                             <div className="list_mnbv">
-                                <div className="container">
+                                <div className={`container ${totalItems >= itemsPerPage ? 'container-with-paddins' : ''}`}>
                                     <div className="row">
                                         {partners.slice(startIndex, endIndex).map((partner) => {
                                             return (
