@@ -129,17 +129,16 @@
       float: right;
   }
   .btn_g a {
-      background: #00D4FF;
-      border-radius: 5px;
-      text-decoration: none;
-      font-family: 'Nova Square';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 22px;
-      line-height: 27px;
-      color: #FFFFFF;
-      padding: 10px 32px;
-      box-sizing: border-box;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Nova Square';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 10px 32px;
+    box-sizing: border-box;
+    background: #00D4FF;
+    border: solid 3px #00D4FF;
   }
   
   .start_y h2 {
